@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <header id="header">
         <h1>Backup Strategy</h1>
     </header>
     <p>Every Day- Full Backup : 3AM</p>
-    <p>Every 4 Hours - Differential Backup : from 12</p>
+    <p>Every 4 Hours - Differential Backup : from 12am</p>
     <p>Every 15 Minutes - Log Backups</p>
-    <p>My Database is Corrupted at Evening 9:49</p>
+    <p>My Database is Corrupted at Evening 9:49pm</p>
+    <br>
+
+    <p>Every Day- Full Backup :3am</p>
+    <input type="time" name="full_backup" id="a">
+
+    <p>Every 4 Hours - Differential Backup : from 12 am</p>
+    <input type="number" name="diff_step" id="b" size="10">
+    <input type="time" name="diff_backup" id="b1">
+    <br>
+
+    <p>Every 15 Minutes - Log Backups</p>
+    <input type="number" name="diff_step" id="c" size="1">
+
+
+    <br>
+    <p>Question</p>
+    <p>My Database is Corrupted at Evening 9:49pm</p>
+
+    <h2>Cal:</h2>
+    <input type="button" value="cal" size="1">
+    <p></p>
+
 </body>
+
 </html>
