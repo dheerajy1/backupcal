@@ -1,0 +1,14 @@
+body {
+    background-color: #ffffff;
+    height: fit-content;
+    width: fit-content;
+    background-image: 
+        radial-gradient(at 45% 5%, #B8E8FC 0, transparent 59%), 
+        radial-gradient(at 25% 45%, #b2afffb5 0, transparent 55%),
+        radial-gradient(at 5% 5%, #B8E8FC 0, transparent 59%), 
+        radial-gradient(at 5% 75%, #afebff 0, transparent 55%),
+        radial-gradient(at 95% 5%, #b8d8fc 0, transparent 59%), 
+        radial-gradient(at 95% 65%, #affcff 0, transparent 55%),
+        radial-gradient(at 95% 65%, #cfb8cc 0, transparent 59%); 
+
+}

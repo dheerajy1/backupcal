@@ -12,11 +12,6 @@
     <header id="header">
         <h1>Backup Strategy</h1>
     </header>
-    <p>Every Day- Full Backup : 3AM</p>
-    <p>Every 4 Hours - Differential Backup : from 12am</p>
-    <p>Every 15 Minutes - Log Backups</p>
-    <p>My Database is Corrupted at Evening 9:49pm</p>
-    <br>
 
     <p>Every Day- Full Backup: <input type="time" name="full_backup" id="a">
     </p>
@@ -27,19 +22,21 @@
     
     <p>Every <input type="number" name="diff_step" id="c" size="1" placeholder="Minutes 0-60"> Minutes - Log Backups</p>
     
-    <br>
+    
     <h2>Question:</h2>
     <p>My Database is Corrupted at Evening <input type="time" name="ques" id="d"></p>
     
 
-    <h3>Cal:</h3>
-    <button onclick="bakcal()">bakcal</button>
+    <h3>Cal: <button onclick="bakcal()">bakcal</button></h3>
+    
 
     <p id="a1"></p>
 
     <p id="b2"></p>
 
     <p id="c1"></p>
+
+    <p id="c2"></p>
 
 
 
