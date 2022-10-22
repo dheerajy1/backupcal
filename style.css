@@ -12,3 +12,42 @@ body {
         radial-gradient(at 95% 65%, #cfb8cc 0, transparent 59%); 
 
 }
+#header{
+    position: absolute;
+    margin-left: 25%;
+}
+
+#dailybackup{
+    display: block;
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 0%;
+}
+#weeklybackup{
+    display: block;
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 15%;
+}
+#ques{
+    display: none;
+    position: absolute;
+    margin-top: 36%;
+    
+}
+#weeklycal{
+    display: none;
+}
+#dailycal{
+    display: none;
+}
+#dailyb{
+    display: none;
+    position: absolute;
+    margin-top: 20%;
+}
+#weeklyb{
+    display: none;
+    position: absolute;
+    margin-top: 20%;
+}

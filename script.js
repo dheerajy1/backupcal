@@ -1,4 +1,26 @@
-function bakcal() {
+function dailybackup() {
+    document.getElementById("dailyb").style.display = "block";
+    document.getElementById("ques").style.display = "block";
+    document.getElementById("dailycal").style.display = "block";
+    document.getElementById("weeklycal").style.display="none";
+    document.getElementById("weeklybackup").style.display="none";
+
+}
+
+function weeklybackup() {
+    document.getElementById("weeklyb").style.display = "block";
+    document.getElementById("ques").style.display = "block";
+    document.getElementById("weeklycal").style.display="block";
+    document.getElementById("dailyb").style.display = "none";
+    document.getElementById("dailybackup").style.display="none";
+
+} 
+
+function weekcal(){
+
+}
+
+function dailycal() {
     var a = parseInt(document.getElementById("a").value);
 
     document.getElementById("a1").innerHTML = "One Full Bakup - " + (a > 12 ? a - 12 : a) + (a < 12 ? ' AM' : ' PM');
@@ -49,4 +71,9 @@ function bakcal() {
             ((d - a) != 0 ? (((d - a) * 60) / c) : NaN) + " log files";
     }
 
+
+
+
+
 }
+

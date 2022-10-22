@@ -12,31 +12,46 @@
     <header id="header">
         <h1>Backup Strategy</h1>
     </header>
+    <div id="dailybackup"><button onclick="dailybackup()">Daily Backup</button></div>
 
-    <p>Every Day- Full Backup: <input type="time" name="full_backup" id="a">
-    </p>
-    
-    <p>Every <input type="number" name="diff_step" id="b" size="0.5" placeholder="Hours 1-12">
-        Hours , Differential Backup begins at <input type="time" name="diff_backup" id="b1">
-    </p>
-    
-    <p>Every <input type="number" name="diff_step" id="c" size="1" placeholder="Minutes 0-60"> Minutes - Log Backups</p>
-    
-    
-    <h2>Question:</h2>
-    <p>My Database is Corrupted at Evening <input type="time" name="ques" id="d"></p>
-    
+    <div id="weeklybackup"><button onclick="weeklybackup()">Weekly Backup</button></div>
 
-    <h3>Cal: <button onclick="bakcal()">bakcal</button></h3>
-    
+        <div id="dailyb">
 
-    <p id="a1"></p>
+            <p>Every Day- Full Backup: <input type="time" name="full_backup" id="a">
+            </p>
 
-    <p id="b2"></p>
+            <p>Every <input type="number" name="diff_step" id="b" size="0.5" placeholder="Hours 1-12">
+                Hours , Differential Backup begins at <input type="time" name="diff_backup" id="b1">
+            </p>
 
-    <p id="c1"></p>
+            <p>Every <input type="number" name="diff_step" id="c" size="1" placeholder="Minutes 0-60"> Minutes - Log
+                Backups
+            </p>
 
-    <p id="c2"></p>
+        </div>
+
+        <div id="weeklyb">
+            <p>Every Sunday, Full Backup at <input type="time" name="fullbackup" id="wa">
+            </p>
+
+        </div>
+
+        <div id="ques">
+            <h2>Question:</h2>
+            <p>My Database is Corrupted at Evening <input type="time" name="ques" id="d"></p>
+
+            <h3 id="dailycal">Cal: <button onclick="dailycal()">dailycal</button></h3>
+            <h4 id="weeklycal">cal:<button onclick="weekcal()">weekcal</button></h4>
+        </div>
+
+        <p id="a1"></p>
+
+        <p id="b2"></p>
+
+        <p id="c1"></p>
+
+        <p id="c2"></p>
 
 
 
