@@ -12,39 +12,61 @@
     <header id="header">
         <h1>Backup Strategy</h1>
     </header>
-    <div id="dailybackup"><button onclick="dailybackup()">Daily Backup</button></div>
+    <div id="dailybackup">
+        <input type="checkbox" onclick="dailybackup()" id="checkdaily">
+        </input>
+        <label for="checkdaily">Daily Backup</label>
+    </div>
 
-    <div id="weeklybackup"><button onclick="weeklybackup()">Weekly Backup</button></div>
+    <div id="weeklybackup">
+        <input type="checkbox" onclick="weeklybackup()" id="checkweekly">
+        </input>
+        <label for="checkweekly">Weekly Backup</label>
+    </div>
 
-        <div id="dailyb">
+    <div id="dailyb">
+        <p>Every Day- Full Backup: <input type="time" name="full_backup" id="a">
+        </p>
 
-            <p>Every Day- Full Backup: <input type="time" name="full_backup" id="a">
-            </p>
+        <p>Every <input type="number" name="diff_step" id="b" size="0.5" placeholder="Hours 1-12">
+            Hours , Differential Backup begins at <input type="time" name="diff_backup" id="b1">
+        </p>
 
-            <p>Every <input type="number" name="diff_step" id="b" size="0.5" placeholder="Hours 1-12">
-                Hours , Differential Backup begins at <input type="time" name="diff_backup" id="b1">
-            </p>
+        <p>Every <input type="number" name="diff_step" id="c" size="1" placeholder="Minutes 0-60"> Minutes - Log
+            Backups
+        </p>
 
-            <p>Every <input type="number" name="diff_step" id="c" size="1" placeholder="Minutes 0-60"> Minutes - Log
-                Backups
-            </p>
+    </div>
 
+    <div id="weeklyb">
+        <p>Every Sunday, Full Backup at <input type="time" name="fullbackup" id="wa">
+        </p>
+
+    </div>
+
+    <div id="ques">
+
+        <p style="display: none" id="qd">My Database is Corrupted at <input type="time" name="ques" id="d"></p>
+
+        <div class="dropdown" style="display: none" id="qw">My Database is Corrupted at
+            <input type="text" onclick="drop()" name="weekday" id="wd" size="0.5" placeholder="Weekday" readonly> , Time
+            <input type="time" name="" id="we">
+            <div style="display: none" class="options" id="opt">
+                <div onclick="show('sun')">sun</div>
+                <div onclick="show('mon')">mon</div>
+                <div onclick="show('tue')">tue</div>
+                <div onclick="show('wed')">wed</div>
+                <div onclick="show('thu')">thu</div>
+                <div onclick="show('fri')">fri</div>
+                <div onclick="show('sat')">sat</div>
+            </div>
         </div>
 
-        <div id="weeklyb">
-            <p>Every Sunday, Full Backup at <input type="time" name="fullbackup" id="wa">
-            </p>
+        <h3 id="dailycal">Calculate: <button onclick="dailycal()">dailycal</button></h3>
 
-        </div>
-
-        <div id="ques">
-            <h2>Question:</h2>
-            <p>My Database is Corrupted at Evening <input type="time" name="ques" id="d"></p>
-
-            <h3 id="dailycal">Cal: <button onclick="dailycal()">dailycal</button></h3>
-            <h4 id="weeklycal">cal:<button onclick="weekcal()">weekcal</button></h4>
-        </div>
-
+        <h4 id="weeklycal">Calculate: <button onclick="weekcal()">weekcal</button></h4>
+    </div>
+    <div id="sol">
         <p id="a1"></p>
 
         <p id="b2"></p>
@@ -52,7 +74,7 @@
         <p id="c1"></p>
 
         <p id="c2"></p>
-
+    </div>
 
 
 </body>

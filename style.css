@@ -1,53 +1,232 @@
 body {
+    display: flex;
     background-color: #ffffff;
     height: fit-content;
     width: fit-content;
-    background-image: 
-        radial-gradient(at 45% 5%, #B8E8FC 0, transparent 59%), 
+    background-image:
+        radial-gradient(at 45% 5%, #B8E8FC 0, transparent 59%),
         radial-gradient(at 25% 45%, #b2afffb5 0, transparent 55%),
-        radial-gradient(at 5% 5%, #B8E8FC 0, transparent 59%), 
+        radial-gradient(at 5% 5%, #B8E8FC 0, transparent 59%),
         radial-gradient(at 5% 75%, #afebff 0, transparent 55%),
-        radial-gradient(at 95% 5%, #b8d8fc 0, transparent 59%), 
+        radial-gradient(at 95% 5%, #b8d8fc 0, transparent 59%),
         radial-gradient(at 95% 65%, #affcff 0, transparent 55%),
-        radial-gradient(at 95% 65%, #cfb8cc 0, transparent 59%); 
-
+        radial-gradient(at 95% 65%, #cfb8cc 0, transparent 59%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-#header{
+
+#header {
     position: absolute;
     margin-left: 25%;
 }
 
-#dailybackup{
+#dailybackup {
     display: block;
-    position: absolute;
-    margin-top: 15%;
-    margin-left: 0%;
+
+
 }
-#weeklybackup{
+
+#weeklybackup {
     display: block;
-    position: absolute;
-    margin-top: 15%;
-    margin-left: 15%;
+
 }
-#ques{
+
+#ques {
     display: none;
     position: absolute;
-    margin-top: 36%;
+    margin-top: 44%;
+
+}
+
+#sol {
+
+    position: absolute;
+    display: none;
+    top: 55%;
+}
+
+.dropdown {
+    position: relative;
+
+}
+
+.dropdown::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 9px;
+    left: 297px;
+    z-index: 1000;
+    border: 2px solid rgb(89, 85, 85);
+    border-top: 2px solid #f7d5e1;
+    border-right: 2px solid #f7d5e1;
+    backdrop-filter: blur(25px) saturate(180%);
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+/*
+.dropdown.active::before {
+    top: 9px;
+    transform: rotate(-225deg);
     
+} 
+*/
+
+
+.dropdown input#wd {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    background: #f7d5e1;
+    border: none;
+    box-shadow: 0 5px 20px #0000006c;
+    padding-left: 9px;
+    border-radius: 5px;
 }
-#weeklycal{
+
+.dropdown .options {
+    position: absolute;
+    top: 35px;
+    left: 206px;
+    width: 110px;
+    border-radius: 9px;
+    box-shadow: 0 30px 50px #0000002d;
+    backdrop-filter: blur(25px) saturate(180%);
+    overflow: hidden;
+}
+/*
+.dropdown.active .options {
+    display: block;
+}
+*/
+
+.dropdown .options div {
+    padding: 7px 20px;
+    cursor: pointer;
+}
+
+.dropdown .options div:hover {
+    background: #f8f8f843;
+    border-radius: 10px;
+    color: #ffffff;
+    backdrop-filter: blur(5px) saturate(180%);
+}
+
+
+#weeklycal {
+    position: absolute;
+    display: none;
+    top: 550%;
+}
+
+#dailycal {
     display: none;
 }
-#dailycal{
-    display: none;
-}
-#dailyb{
+
+#dailyb {
     display: none;
     position: absolute;
-    margin-top: 20%;
+    margin-top: 25%;
 }
-#weeklyb{
+
+#weeklyb {
     display: none;
     position: absolute;
-    margin-top: 20%;
+    margin-top: 25%;
+}
+
+input[type="checkbox"]#checkdaily {
+    position: absolute;
+    top: 16%;
+    left: 6%;
+    width: 80px;
+    height: 40px;
+    appearance: none;
+    background: #c6c6c6;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px #00000021;
+    transform: .5s;
+    cursor: pointer;
+}
+
+input:checked[type="checkbox"]#checkdaily {
+    background: #04a7f3b8;
+}
+
+input[type="checkbox"]#checkdaily:before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0px;
+    left: 0px;
+    border-radius: 20px;
+    transform: scale(1.1);
+    background: #fafafa;
+    box-shadow: 1px 2px 11px #000000c4;
+    transition: .5s;
+    cursor: pointer;
+}
+
+input:checked[type="checkbox"]#checkdaily:before {
+    left: 40px;
+
+}
+
+input[type="checkbox"]#checkdaily+label {
+    color: #000000fa;
+    position: absolute;
+    top: 18%;
+    left: 19%;
+}
+
+/* weekly check button */
+
+input[type="checkbox"]#checkweekly {
+    position: absolute;
+    top: 16%;
+    left: 40%;
+    width: 80px;
+    height: 40px;
+    appearance: none;
+    background: #c6c6c6;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px #00000021;
+    transform: .5s;
+    cursor: pointer;
+}
+
+input:checked[type="checkbox"]#checkweekly {
+    background: #04a7f3b8;
+}
+
+input[type="checkbox"]#checkweekly:before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0px;
+    left: 0px;
+    border-radius: 20px;
+    transform: scale(1.1);
+    background: #fafafa;
+    box-shadow: 1px 2px 11px #000000c4;
+    transition: .5s;
+    cursor: pointer;
+}
+
+input:checked[type="checkbox"]#checkweekly:before {
+    left: 40px;
+
+}
+
+input[type="checkbox"]#checkweekly+label {
+    color: #000000fa;
+    position: absolute;
+    top: 18%;
+    left: 53%;
 }

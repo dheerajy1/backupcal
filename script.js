@@ -1,22 +1,67 @@
 function dailybackup() {
-    document.getElementById("dailyb").style.display = "block";
-    document.getElementById("ques").style.display = "block";
-    document.getElementById("dailycal").style.display = "block";
-    document.getElementById("weeklycal").style.display="none";
-    document.getElementById("weeklybackup").style.display="none";
+    if (document.getElementById("checkdaily").checked == true) {
+        document.getElementById("dailyb").style.display = "block";
+        document.getElementById("ques").style.display = "block";
+        document.getElementById("dailycal").style.display = "block";
+        document.getElementById("qd").style.display = "block";
+        document.getElementById("sol").style.display = "block";
+        document.getElementById("weeklycal").style.display = "none";
+        document.getElementById("weeklybackup").style.display = "none";
+    }
+    else {
+        document.getElementById("dailyb").style.display = "none";
+        document.getElementById("ques").style.display = "none";
+        document.getElementById("dailycal").style.display = "none";
+        document.getElementById("qd").style.display = "none";
+        document.getElementById("weeklycal").style.display = "none";
+        document.getElementById("sol").style.display = "none";
+        document.getElementById("weeklybackup").style.display = "block";
 
+    }
 }
 
 function weeklybackup() {
-    document.getElementById("weeklyb").style.display = "block";
-    document.getElementById("ques").style.display = "block";
-    document.getElementById("weeklycal").style.display="block";
-    document.getElementById("dailyb").style.display = "none";
-    document.getElementById("dailybackup").style.display="none";
+    if (document.getElementById("checkweekly").checked == true) {
+        document.getElementById("weeklyb").style.display = "block";
+        document.getElementById("ques").style.display = "block";
+        document.getElementById("weeklycal").style.display = "block";
+        document.getElementById("qw").style.display = "block";
+        document.getElementById("sol").style.display = "block";
+        document.getElementById("dailyb").style.display = "none";
+        document.getElementById("dailybackup").style.display = "none";
+      
+    }
+    else{
+        document.getElementById("weeklyb").style.display = "none";
+        document.getElementById("ques").style.display = "none";
+        document.getElementById("weeklycal").style.display = "none";
+        document.getElementById("qw").style.display = "none";
+        document.getElementById("dailyb").style.display = "none";
+        document.getElementById("sol").style.display = "none";
+        document.getElementById("dailybackup").style.display = "block";
+    }
 
-} 
+}
+function show(anything){
+    document.querySelector('#wd').value=anything;
+}
+function drop(){
+    if(document.getElementById("opt").style.display == "none"){
+        document.getElementById("opt").style.display="block";
+    }
+    else{
+        document.getElementById("opt").style.display="none";
+    }
 
-function weekcal(){
+}
+/*
+let dropdown = document.querySelector('.dropdown');
+dropdown.onlclick = function(){
+    dropdown.classList.toggle('active');
+}
+*/
+
+function weekcal() {
 
 }
 
