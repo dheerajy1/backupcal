@@ -32,8 +32,7 @@
             Hours , Differential Backup begins at <input type="time" name="diff_backup" id="b1">
         </p>
 
-        <p>Every <input type="number" name="diff_step" id="c" size="1" placeholder="Minutes 0-60"> Minutes - Log
-            Backups
+        <p>Every <input type="number" name="logstep" id="c" size="1" placeholder="Minutes 0-60"> Minutes - Log Backups
         </p>
 
     </div>
@@ -41,7 +40,10 @@
     <div id="weeklyb">
         <p>Every Sunday, Full Backup at <input type="time" name="fullbackup" id="wa">
         </p>
-
+        <p>Every day, Diff Backup at <input type="time" name="diffbackup" id="wb">
+        </p>
+        <p>Every <input type="number" name="logstep" id="wc" size="1" placeholder="Minutes 0-60"> Minutes - Log Backups
+        </p>
     </div>
 
     <div id="ques">
@@ -51,6 +53,7 @@
         <div class="dropdown" style="display: none" id="qw">My Database is Corrupted at
             <input type="text" onclick="drop()" name="weekday" id="wd" size="0.5" placeholder="Weekday" readonly> , Time
             <input type="time" name="" id="we">
+            <div class="arr"></div>
             <div style="display: none" class="options" id="opt">
                 <div onclick="show('sun')">sun</div>
                 <div onclick="show('mon')">mon</div>

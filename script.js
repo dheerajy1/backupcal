@@ -29,9 +29,9 @@ function weeklybackup() {
         document.getElementById("sol").style.display = "block";
         document.getElementById("dailyb").style.display = "none";
         document.getElementById("dailybackup").style.display = "none";
-      
+
     }
-    else{
+    else {
         document.getElementById("weeklyb").style.display = "none";
         document.getElementById("ques").style.display = "none";
         document.getElementById("weeklycal").style.display = "none";
@@ -42,26 +42,93 @@ function weeklybackup() {
     }
 
 }
-function show(anything){
-    document.querySelector('#wd').value=anything;
+function show(anything) {
+    document.querySelector('#wd').value = anything;
+    return anything;
+
 }
-function drop(){
-    if(document.getElementById("opt").style.display == "none"){
-        document.getElementById("opt").style.display="block";
+
+
+function drop() {
+    if (document.getElementById("opt").style.display == "none") {
+        document.getElementById("opt").style.display = "block";
+        document.querySelector(".arr").style.transform = "rotate(-45deg)";
+        document.querySelector(".arr").style.top = "10px";
     }
-    else{
-        document.getElementById("opt").style.display="none";
+    else {
+        document.getElementById("opt").style.display = "none";
+        document.querySelector(".arr").style.transform = "rotate(-225deg)";
+        document.querySelector(".arr").style.top = "12px";
     }
 
 }
-/*
-let dropdown = document.querySelector('.dropdown');
-dropdown.onlclick = function(){
-    dropdown.classList.toggle('active');
-}
-*/
+
 
 function weekcal() {
+    let weekn = document.querySelector('#wd').value;
+    if (weekn == "sun") {
+        numwe = 1;
+    }
+    else if (weekn == "mon") {
+        numwe = 2;
+    }
+    else if (weekn == "tue") {
+        numwe = 3;
+    }
+    else if (weekn == "wed") {
+        numwe = 4;
+    }
+    else if (weekn == "thu") {
+        numwe = 5;
+    }
+    else if (weekn == "fri") {
+        numwe = 6;
+    }
+    else if (weekn == "sat") {
+        numwe = 7;
+    }
+
+    if (numwe == 1) {
+        wed = "sat";
+    }
+    else if (numwe == 2) {
+        wed = "sun ";
+    }
+    else if (numwe == 3) {
+        wed = "mon ";
+    }
+    else if (numwe == 4) {
+        wed = "tue ";
+    }
+    else if (numwe == 5) {
+        wed = "wed ";
+    }
+    else if (numwe == 6) {
+        wed = "thu ";
+    }
+    else if (numwe == 7) {
+        wed = "fri ";
+    }
+
+    var wa = parseInt(document.getElementById("wa").value);
+    document.getElementById("a1").innerHTML = "One Full Backup, Last Sunday - " + (wa > 12 ? wa - 12 : wa) + (wa < 12 ? ' AM' : ' PM');
+
+    var wb = parseInt(document.getElementById("wb").value);
+    document.getElementById("b2").innerHTML = "One recent Differential Backup -" + wed + (wb > 12 ? wb - 12 : wb) + (wb < 12 ? ' AM' : ' PM');
+
+    var i, j, we = parseInt(document.getElementById("we").value);
+
+    for (i = 0; i < we; i++) {
+        if (wb < 24) {
+            for (j = 0; wb < 24; j++) {
+                wb += 1;
+            }
+        }
+    }
+    var c1, wc = parseInt(document.getElementById("wc").value);
+    we1 =(document.getElementById("we").value);
+    
+    document.getElementById("c1").innerHTML ="Log Backups - "+ ((i + j) * 60 / wc + parseInt(we1.slice(-2) / wc)) + " log files" ;
 
 }
 

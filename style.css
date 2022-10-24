@@ -49,30 +49,22 @@ body {
 
 }
 
-.dropdown::before {
+.arr {
     content: "";
     position: absolute;
     width: 6px;
     height: 6px;
-    top: 9px;
+    top: 13px;
     left: 297px;
     z-index: 1000;
     border: 2px solid rgb(89, 85, 85);
     border-top: 2px solid #f7d5e1;
     border-right: 2px solid #f7d5e1;
     backdrop-filter: blur(25px) saturate(180%);
-    transform: rotate(-45deg);
+    transform: rotate(-225deg);
     transition: 0.5s;
     pointer-events: none;
-}
-/*
-.dropdown.active::before {
-    top: 9px;
-    transform: rotate(-225deg);
-    
 } 
-*/
-
 
 .dropdown input#wd {
     position: relative;
@@ -98,11 +90,6 @@ body {
     backdrop-filter: blur(25px) saturate(180%);
     overflow: hidden;
 }
-/*
-.dropdown.active .options {
-    display: block;
-}
-*/
 
 .dropdown .options div {
     padding: 7px 20px;
