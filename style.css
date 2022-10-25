@@ -3,53 +3,59 @@ body {
     background-color: #ffffff;
     height: fit-content;
     width: fit-content;
-    background-image:
-        radial-gradient(at 45% 5%, #B8E8FC 0, transparent 59%),
-        radial-gradient(at 25% 45%, #b2afffb5 0, transparent 55%),
-        radial-gradient(at 5% 5%, #B8E8FC 0, transparent 59%),
-        radial-gradient(at 5% 75%, #afebff 0, transparent 55%),
-        radial-gradient(at 95% 5%, #b8d8fc 0, transparent 59%),
-        radial-gradient(at 95% 65%, #affcff 0, transparent 55%),
-        radial-gradient(at 95% 65%, #cfb8cc 0, transparent 59%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#header {
+  
+    background: radial-gradient(
+      circle at -80% 90%,
+      #484d5c,
+      #5d5677,
+      #826192,
+      #ae68a5,
+      #c96c93,
+      #e4726d,
+      #ffb56b
+    );
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  #header {
     position: absolute;
-    margin-left: 25%;
-}
-
-#dailybackup {
+    left: 300px;
+  }
+  
+  #dailybackup {
     display: block;
-
-
-}
-
-#weeklybackup {
+  }
+  
+  #weeklybackup {
     display: block;
-
-}
-
-#ques {
+  }
+  
+  #ques {
     display: none;
     position: absolute;
-    margin-top: 44%;
-
-}
-
-#sol {
-
+    top: 345px;
+    left: 20px;
+  }
+  
+  #sol {
     position: absolute;
     display: none;
-    top: 55%;
-}
-
-.dropdown {
+    top: 430px;
+    left: 20px;
+  }
+  #sol2 {
+    position: absolute;
+    display: none;
+    top: 430px;
+    left: 617px;
+  }
+  
+  .dropdown {
     position: relative;
-
-}
-
-.arr {
+    left: 597px;
+  }
+  
+  .arr {
     content: "";
     position: absolute;
     width: 6px;
@@ -64,9 +70,9 @@ body {
     transform: rotate(-225deg);
     transition: 0.5s;
     pointer-events: none;
-} 
-
-.dropdown input#wd {
+  }
+  
+  .dropdown input#wd {
     position: relative;
     top: 0px;
     left: 0px;
@@ -78,9 +84,9 @@ body {
     box-shadow: 0 5px 20px #0000006c;
     padding-left: 9px;
     border-radius: 5px;
-}
-
-.dropdown .options {
+  }
+  
+  .dropdown .options {
     position: absolute;
     top: 35px;
     left: 206px;
@@ -88,45 +94,53 @@ body {
     border-radius: 9px;
     box-shadow: 0 30px 50px #0000002d;
     backdrop-filter: blur(25px) saturate(180%);
+    transition: 0.5s;
     overflow: hidden;
-}
-
-.dropdown .options div {
+  }
+  
+  .dropdown .options div {
     padding: 7px 20px;
     cursor: pointer;
-}
-
-.dropdown .options div:hover {
+  }
+  
+  .dropdown .options div:hover {
     background: #f8f8f843;
     border-radius: 10px;
     color: #ffffff;
+    transition: 0.5s;
     backdrop-filter: blur(5px) saturate(180%);
-}
-
-
-#weeklycal {
-    position: absolute;
+  }
+  
+  #weeklycal {
+    position: relative;
     display: none;
-    top: 550%;
-}
-
-#dailycal {
+    top: -2px;
+    transition: 0.5s;
+    left: 597px;
+  }
+  
+  #dailycal {
+    transition: 0.5s;
     display: none;
-}
-
-#dailyb {
-    display: none;
-    position: absolute;
-    margin-top: 25%;
-}
-
-#weeklyb {
+  }
+  
+  #dailyb {
     display: none;
     position: absolute;
-    margin-top: 25%;
-}
-
-input[type="checkbox"]#checkdaily {
+    top: 200px;
+    left: 20px;
+    transition: 0.5s;
+  }
+  
+  #weeklyb {
+    display: none;
+    position: absolute;
+    top: 200px;
+    left: 617px;
+    transition: 0.5s;
+  }
+  
+  input[type="checkbox"]#checkdaily {
     position: absolute;
     top: 16%;
     left: 6%;
@@ -136,15 +150,15 @@ input[type="checkbox"]#checkdaily {
     background: #c6c6c6;
     border-radius: 20px;
     box-shadow: inset 0 0 5px #00000021;
-    transform: .5s;
+    transform: 0.5s;
     cursor: pointer;
-}
-
-input:checked[type="checkbox"]#checkdaily {
+  }
+  
+  input:checked[type="checkbox"]#checkdaily {
     background: #04a7f3b8;
-}
-
-input[type="checkbox"]#checkdaily:before {
+  }
+  
+  input[type="checkbox"]#checkdaily:before {
     content: "";
     position: absolute;
     width: 40px;
@@ -155,25 +169,24 @@ input[type="checkbox"]#checkdaily:before {
     transform: scale(1.1);
     background: #fafafa;
     box-shadow: 1px 2px 11px #000000c4;
-    transition: .5s;
+    transition: 0.5s;
     cursor: pointer;
-}
-
-input:checked[type="checkbox"]#checkdaily:before {
+  }
+  
+  input:checked[type="checkbox"]#checkdaily:before {
     left: 40px;
-
-}
-
-input[type="checkbox"]#checkdaily+label {
+  }
+  
+  input[type="checkbox"]#checkdaily + label {
     color: #000000fa;
     position: absolute;
-    top: 18%;
-    left: 19%;
-}
-
-/* weekly check button */
-
-input[type="checkbox"]#checkweekly {
+    top: 17.5%;
+    left: 13%;
+  }
+  
+  /* weekly check button */
+  
+  input[type="checkbox"]#checkweekly {
     position: absolute;
     top: 16%;
     left: 40%;
@@ -183,15 +196,15 @@ input[type="checkbox"]#checkweekly {
     background: #c6c6c6;
     border-radius: 20px;
     box-shadow: inset 0 0 5px #00000021;
-    transform: .5s;
+    transform: 0.5s;
     cursor: pointer;
-}
-
-input:checked[type="checkbox"]#checkweekly {
+  }
+  
+  input:checked[type="checkbox"]#checkweekly {
     background: #04a7f3b8;
-}
-
-input[type="checkbox"]#checkweekly:before {
+  }
+  
+  input[type="checkbox"]#checkweekly:before {
     content: "";
     position: absolute;
     width: 40px;
@@ -202,18 +215,17 @@ input[type="checkbox"]#checkweekly:before {
     transform: scale(1.1);
     background: #fafafa;
     box-shadow: 1px 2px 11px #000000c4;
-    transition: .5s;
+    transition: 0.5s;
     cursor: pointer;
-}
-
-input:checked[type="checkbox"]#checkweekly:before {
+  }
+  
+  input:checked[type="checkbox"]#checkweekly:before {
     left: 40px;
-
-}
-
-input[type="checkbox"]#checkweekly+label {
+  }
+  
+  input[type="checkbox"]#checkweekly + label {
     color: #000000fa;
     position: absolute;
-    top: 18%;
-    left: 53%;
-}
+    top: 17.5%;
+    left: 47%;
+  }

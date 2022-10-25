@@ -16,17 +16,15 @@ function dailybackup() {
         document.getElementById("weeklycal").style.display = "none";
         document.getElementById("sol").style.display = "none";
         document.getElementById("weeklybackup").style.display = "block";
-
     }
 }
-
 function weeklybackup() {
     if (document.getElementById("checkweekly").checked == true) {
         document.getElementById("weeklyb").style.display = "block";
         document.getElementById("ques").style.display = "block";
         document.getElementById("weeklycal").style.display = "block";
         document.getElementById("qw").style.display = "block";
-        document.getElementById("sol").style.display = "block";
+        document.getElementById("sol2").style.display = "block";
         document.getElementById("dailyb").style.display = "none";
         document.getElementById("dailybackup").style.display = "none";
 
@@ -37,7 +35,7 @@ function weeklybackup() {
         document.getElementById("weeklycal").style.display = "none";
         document.getElementById("qw").style.display = "none";
         document.getElementById("dailyb").style.display = "none";
-        document.getElementById("sol").style.display = "none";
+        document.getElementById("sol2").style.display = "none";
         document.getElementById("dailybackup").style.display = "block";
     }
 
@@ -111,10 +109,10 @@ function weekcal() {
     }
 
     var wa = parseInt(document.getElementById("wa").value);
-    document.getElementById("a1").innerHTML = "One Full Backup, Last Sunday - " + (wa > 12 ? wa - 12 : wa) + (wa < 12 ? ' AM' : ' PM');
+    document.getElementById("as1").innerHTML = "One Full Backup, Last Sunday - " + (wa > 12 ? wa - 12 : wa) + (wa < 12 ? ' AM' : ' PM');
 
     var wb = parseInt(document.getElementById("wb").value);
-    document.getElementById("b2").innerHTML = "One recent Differential Backup -" + wed + (wb > 12 ? wb - 12 : wb) + (wb < 12 ? ' AM' : ' PM');
+    document.getElementById("bs2").innerHTML = "One recent Differential Backup -" + wed + (wb > 12 ? wb - 12 : wb) + (wb < 12 ? ' AM' : ' PM');
 
     var i, j, we = parseInt(document.getElementById("we").value);
 
@@ -128,7 +126,7 @@ function weekcal() {
     var c1, wc = parseInt(document.getElementById("wc").value);
     we1 =(document.getElementById("we").value);
     
-    document.getElementById("c1").innerHTML ="Log Backups - "+ ((i + j) * 60 / wc + parseInt(we1.slice(-2) / wc)) + " log files" ;
+    document.getElementById("cs1").innerHTML ="Log Backups - "+ ((i + j) * 60 / wc + parseInt(we1.slice(-2) / wc)) + " log files" ;
 
 }
 
@@ -182,9 +180,6 @@ function dailycal() {
         document.getElementById("c1").innerHTML = "Log Backups - " +
             ((d - a) != 0 ? (((d - a) * 60) / c) : NaN) + " log files";
     }
-
-
-
 
 
 }
