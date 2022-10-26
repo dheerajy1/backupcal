@@ -18,6 +18,7 @@ function dailybackup() {
         document.getElementById("weeklybackup").style.display = "block";
     }
 }
+
 function weeklybackup() {
     if (document.getElementById("checkweekly").checked == true) {
         document.getElementById("weeklyb").style.display = "block";

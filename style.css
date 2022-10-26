@@ -1,231 +1,254 @@
 body {
-    display: flex;
-    background-color: #ffffff;
-    height: fit-content;
-    width: fit-content;
-  
-    background: radial-gradient(
-      circle at -80% 90%,
-      #484d5c,
-      #5d5677,
-      #826192,
-      #ae68a5,
-      #c96c93,
-      #e4726d,
-      #ffb56b
-    );
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  #header {
-    position: absolute;
-    left: 300px;
-  }
-  
-  #dailybackup {
-    display: block;
-  }
-  
-  #weeklybackup {
-    display: block;
-  }
-  
-  #ques {
-    display: none;
-    position: absolute;
-    top: 345px;
-    left: 20px;
-  }
-  
-  #sol {
-    position: absolute;
-    display: none;
-    top: 430px;
-    left: 20px;
-  }
-  #sol2 {
-    position: absolute;
-    display: none;
-    top: 430px;
-    left: 617px;
-  }
-  
-  .dropdown {
-    position: relative;
-    left: 597px;
-  }
-  
-  .arr {
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    top: 13px;
-    left: 297px;
-    z-index: 1000;
-    border: 2px solid rgb(89, 85, 85);
-    border-top: 2px solid #f7d5e1;
-    border-right: 2px solid #f7d5e1;
-    backdrop-filter: blur(25px) saturate(180%);
-    transform: rotate(-225deg);
-    transition: 0.5s;
-    pointer-events: none;
-  }
-  
-  .dropdown input#wd {
-    position: relative;
-    top: 0px;
-    left: 0px;
-    width: 100px;
-    height: 30px;
-    cursor: pointer;
-    background: #f7d5e1;
-    border: none;
-    box-shadow: 0 5px 20px #0000006c;
-    padding-left: 9px;
-    border-radius: 5px;
-  }
-  
-  .dropdown .options {
-    position: absolute;
-    top: 35px;
-    left: 206px;
-    width: 110px;
-    border-radius: 9px;
-    box-shadow: 0 30px 50px #0000002d;
-    backdrop-filter: blur(25px) saturate(180%);
-    transition: 0.5s;
-    overflow: hidden;
-  }
-  
-  .dropdown .options div {
-    padding: 7px 20px;
-    cursor: pointer;
-  }
-  
-  .dropdown .options div:hover {
-    background: #f8f8f843;
-    border-radius: 10px;
-    color: #ffffff;
-    transition: 0.5s;
-    backdrop-filter: blur(5px) saturate(180%);
-  }
-  
-  #weeklycal {
-    position: relative;
-    display: none;
-    top: -2px;
-    transition: 0.5s;
-    left: 597px;
-  }
-  
-  #dailycal {
-    transition: 0.5s;
-    display: none;
-  }
-  
-  #dailyb {
-    display: none;
-    position: absolute;
-    top: 200px;
-    left: 20px;
-    transition: 0.5s;
-  }
-  
-  #weeklyb {
-    display: none;
-    position: absolute;
-    top: 200px;
-    left: 617px;
-    transition: 0.5s;
-  }
-  
-  input[type="checkbox"]#checkdaily {
-    position: absolute;
-    top: 16%;
-    left: 6%;
-    width: 80px;
-    height: 40px;
-    appearance: none;
-    background: #c6c6c6;
-    border-radius: 20px;
-    box-shadow: inset 0 0 5px #00000021;
-    transform: 0.5s;
-    cursor: pointer;
-  }
-  
-  input:checked[type="checkbox"]#checkdaily {
-    background: #04a7f3b8;
-  }
-  
-  input[type="checkbox"]#checkdaily:before {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 0px;
-    left: 0px;
-    border-radius: 20px;
-    transform: scale(1.1);
-    background: #fafafa;
-    box-shadow: 1px 2px 11px #000000c4;
-    transition: 0.5s;
-    cursor: pointer;
-  }
-  
-  input:checked[type="checkbox"]#checkdaily:before {
-    left: 40px;
-  }
-  
-  input[type="checkbox"]#checkdaily + label {
-    color: #000000fa;
-    position: absolute;
-    top: 17.5%;
-    left: 13%;
-  }
-  
-  /* weekly check button */
-  
-  input[type="checkbox"]#checkweekly {
-    position: absolute;
-    top: 16%;
-    left: 40%;
-    width: 80px;
-    height: 40px;
-    appearance: none;
-    background: #c6c6c6;
-    border-radius: 20px;
-    box-shadow: inset 0 0 5px #00000021;
-    transform: 0.5s;
-    cursor: pointer;
-  }
-  
-  input:checked[type="checkbox"]#checkweekly {
-    background: #04a7f3b8;
-  }
-  
-  input[type="checkbox"]#checkweekly:before {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 0px;
-    left: 0px;
-    border-radius: 20px;
-    transform: scale(1.1);
-    background: #fafafa;
-    box-shadow: 1px 2px 11px #000000c4;
-    transition: 0.5s;
-    cursor: pointer;
-  }
-  
-  input:checked[type="checkbox"]#checkweekly:before {
-    left: 40px;
-  }
-  
-  input[type="checkbox"]#checkweekly + label {
-    color: #000000fa;
-    position: absolute;
-    top: 17.5%;
-    left: 47%;
-  }
+  display: flex;
+  background-color: #ffffff;
+  height: fit-content;
+  width: fit-content;
+
+  background: radial-gradient(
+    circle at -80% 90%,
+    #484d5c,
+    #5d5677,
+    #826192,
+    #ae68a5,
+    #c96c93,
+    #e4726d,
+    #ffb56b
+  );
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header {
+  position: absolute;
+  left: 300px;
+}
+
+#dailybackup {
+  display: block;
+}
+
+#weeklybackup {
+  display: block;
+}
+
+#ques {
+  display: none;
+  position: absolute;
+  top: 345px;
+  left: 20px;
+}
+
+#sol {
+  position: absolute;
+  display: none;
+  top: 430px;
+  left: 20px;
+}
+#sol2 {
+  position: absolute;
+  display: none;
+  top: 430px;
+  left: 617px;
+}
+
+.dropdown {
+  position: relative;
+  left: 597px;
+}
+
+.arr {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 13px;
+  left: 297px;
+  z-index: 1000;
+  border: 2px solid rgb(89, 85, 85);
+  border-top: 2px solid #f7d5e1;
+  border-right: 2px solid #f7d5e1;
+  backdrop-filter: blur(25px) saturate(180%);
+  transform: rotate(-225deg);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.dropdown input#wd {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  background: #f7d5e1;
+  border: none;
+  box-shadow: 0 5px 20px #0000006c;
+  padding-left: 9px;
+  border-radius: 5px;
+}
+
+.dropdown .options {
+  position: absolute;
+  top: 35px;
+  left: 206px;
+  width: 110px;
+  border-radius: 9px;
+  box-shadow: 0 30px 50px #0000002d;
+  backdrop-filter: blur(25px) saturate(180%);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.dropdown .options div {
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.dropdown .options div:hover {
+  background: #f8f8f843;
+  border-radius: 10px;
+  color: #ffffff;
+  transition: 0.5s;
+  backdrop-filter: blur(5px) saturate(180%);
+}
+
+#weeklycal {
+  position: relative;
+  display: none;
+  top: -2px;
+  transition: 0.5s;
+  left: 597px;
+}
+
+#dailycal {
+  transition: 0.5s;
+  display: none;
+}
+
+#dailyb {
+  display: none;
+  position: absolute;
+  top: 200px;
+  left: 20px;
+  transition: 0.5s;
+}
+
+#weeklyb {
+  display: none;
+  position: absolute;
+  top: 200px;
+  left: 617px;
+  transition: 0.5s;
+}
+
+input[type="checkbox"]#checkdaily {
+  position: absolute;
+  top: 16%;
+  left: 6%;
+  width: 80px;
+  height: 40px;
+  appearance: none;
+  background: #c6c6c6;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px #00000021;
+  transform: 0.5s;
+  cursor: pointer;
+}
+
+input:checked[type="checkbox"]#checkdaily {
+  background: #04a7f3b8;
+}
+
+input[type="checkbox"]#checkdaily:before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  left: 0px;
+  border-radius: 20px;
+  transform: scale(1.1);
+  background: #fafafa;
+  box-shadow: 1px 2px 11px #000000c4;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+input:checked[type="checkbox"]#checkdaily:before {
+  left: 40px;
+}
+
+input[type="checkbox"]#checkdaily + label {
+  color: #000000fa;
+  position: absolute;
+  top: 17.5%;
+  left: 13%;
+}
+
+/* weekly check button */
+
+input[type="checkbox"]#checkweekly {
+  position: absolute;
+  top: 16%;
+  left: 40%;
+  width: 80px;
+  height: 40px;
+  appearance: none;
+  background: #c6c6c6;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px #00000021;
+  transform: 0.5s;
+  cursor: pointer;
+}
+
+input:checked[type="checkbox"]#checkweekly {
+  background: #04a7f3b8;
+}
+
+input[type="checkbox"]#checkweekly:before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  left: 0px;
+  border-radius: 20px;
+  transform: scale(1.1);
+  background: #fafafa;
+  box-shadow: 1px 2px 11px #000000c4;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+input:checked[type="checkbox"]#checkweekly:before {
+  left: 40px;
+}
+
+input[type="checkbox"]#checkweekly + label {
+  color: #000000fa;
+  position: absolute;
+  top: 17.5%;
+  left: 47%;
+}
+.footer {
+  position: absolute;
+  top: 40em;
+  left: 50em;
+  height: 40px;
+  width: 150px;
+  padding-top: 15px;
+  padding-left: 30px;
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 9px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  opacity: 0.1;
+}
+.fname {
+  position: absolute;
+  top: 40em;
+  left: 50em;
+  padding-top: 15px;
+  padding-left: 30px;
+  color: rgba(129, 24, 66, 0.997);
+}
