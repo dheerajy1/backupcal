@@ -1,187 +1,170 @@
-function dailybackup() {
-    if (document.getElementById("checkdaily").checked == true) {
-        document.getElementById("dailyb").style.display = "block";
-        document.getElementById("ques").style.display = "block";
-        document.getElementById("dailycal").style.display = "block";
-        document.getElementById("qd").style.display = "block";
-        document.getElementById("sol").style.display = "block";
-        document.getElementById("weeklycal").style.display = "none";
-        document.getElementById("weeklybackup").style.display = "none";
-    }
-    else {
-        document.getElementById("dailyb").style.display = "none";
-        document.getElementById("ques").style.display = "none";
-        document.getElementById("dailycal").style.display = "none";
-        document.getElementById("qd").style.display = "none";
-        document.getElementById("weeklycal").style.display = "none";
-        document.getElementById("sol").style.display = "none";
-        document.getElementById("weeklybackup").style.display = "block";
-    }
-}
+const contentDaily = document.querySelector('.container-daily-backup')
+const contentWeekly = document.querySelector('.container-weekly-backup')
+const mainDailybackup = document.querySelector('#main-dailybackup')
+const mainWeeklybackup = document.querySelector('#main-weeklybackup')
+const mainContainer = document.querySelector('.main-container')
 
-function weeklybackup() {
-    if (document.getElementById("checkweekly").checked == true) {
-        document.getElementById("weeklyb").style.display = "block";
-        document.getElementById("ques").style.display = "block";
-        document.getElementById("weeklycal").style.display = "block";
-        document.getElementById("qw").style.display = "block";
-        document.getElementById("sol2").style.display = "block";
-        document.getElementById("dailyb").style.display = "none";
-        document.getElementById("dailybackup").style.display = "none";
+const checkboxDaily = document.querySelector('#daily-check-box')
+const checkboxWeekly = document.querySelector('#weekly-check-box')
 
-    }
-    else {
-        document.getElementById("weeklyb").style.display = "none";
-        document.getElementById("ques").style.display = "none";
-        document.getElementById("weeklycal").style.display = "none";
-        document.getElementById("qw").style.display = "none";
-        document.getElementById("dailyb").style.display = "none";
-        document.getElementById("sol2").style.display = "none";
-        document.getElementById("dailybackup").style.display = "block";
-    }
-
-}
-function show(anything) {
-    document.querySelector('#wd').value = anything;
-    return anything;
-
-}
+const calculateDaily = document.querySelector('#button-daily-calculate')
+const dailySolutions = document.querySelector('.container-daily-solutions')
+const calculateWeekly = document.querySelector('#button-weekly-calculate')
+const WeeklySolutions = document.querySelector('.container-weekly-solutions')
 
 
-function drop() {
-    if (document.getElementById("opt").style.display == "none") {
-        document.getElementById("opt").style.display = "block";
-        document.querySelector(".arr").style.transform = "rotate(-45deg)";
-        document.querySelector(".arr").style.top = "10px";
-    }
-    else {
-        document.getElementById("opt").style.display = "none";
-        document.querySelector(".arr").style.transform = "rotate(-225deg)";
-        document.querySelector(".arr").style.top = "12px";
-    }
+checkboxDaily.addEventListener('click', () => {
+    contentDaily.classList.toggle('showblock')
+    mainWeeklybackup.classList.toggle('showhidden')
+    mainContainer.classList.toggle('switchmaincontent')
 
-}
+})
+
+checkboxWeekly.addEventListener('click', () => {
+    mainDailybackup.classList.toggle('showhidden')
+    contentWeekly.classList.toggle('showblock')
+    mainContainer.classList.toggle('switchmaincontent')
+})
 
 
-function weekcal() {
-    let weekn = document.querySelector('#wd').value;
-    if (weekn == "sun") {
-        numwe = 1;
-    }
-    else if (weekn == "mon") {
-        numwe = 2;
-    }
-    else if (weekn == "tue") {
-        numwe = 3;
-    }
-    else if (weekn == "wed") {
-        numwe = 4;
-    }
-    else if (weekn == "thu") {
-        numwe = 5;
-    }
-    else if (weekn == "fri") {
-        numwe = 6;
-    }
-    else if (weekn == "sat") {
-        numwe = 7;
-    }
-
-    if (numwe == 1) {
-        wed = "sat";
-    }
-    else if (numwe == 2) {
-        wed = "sun ";
-    }
-    else if (numwe == 3) {
-        wed = "mon ";
-    }
-    else if (numwe == 4) {
-        wed = "tue ";
-    }
-    else if (numwe == 5) {
-        wed = "wed ";
-    }
-    else if (numwe == 6) {
-        wed = "thu ";
-    }
-    else if (numwe == 7) {
-        wed = "fri ";
-    }
-
-    var wa = parseInt(document.getElementById("wa").value);
-    document.getElementById("as1").innerHTML = "One Full Backup, Last Sunday - " + (wa > 12 ? wa - 12 : wa) + (wa < 12 ? ' AM' : ' PM');
-
-    var wb = parseInt(document.getElementById("wb").value);
-    document.getElementById("bs2").innerHTML = "One recent Differential Backup -" + wed + (wb > 12 ? wb - 12 : wb) + (wb < 12 ? ' AM' : ' PM');
-
-    var i, j, we = parseInt(document.getElementById("we").value);
-
-    for (i = 0; i < we; i++) {
-        if (wb < 24) {
-            for (j = 0; wb < 24; j++) {
-                wb += 1;
-            }
-        }
-    }
-    var c1, wc = parseInt(document.getElementById("wc").value);
-    we1 =(document.getElementById("we").value);
-    
-    document.getElementById("cs1").innerHTML ="Log Backups - "+ ((i + j) * 60 / wc + parseInt(we1.slice(-2) / wc)) + " log files" ;
-
-}
-
-function dailycal() {
+calculateDaily.addEventListener('click', () => {
     var a = parseInt(document.getElementById("a").value);
-
-    document.getElementById("a1").innerHTML = "One Full Bakup - " + (a > 12 ? a - 12 : a) + (a < 12 ? ' AM' : ' PM');
-    //console.log("a="+a);
 
     var b = parseInt(document.getElementById("b").value);
     var b1 = parseInt(document.getElementById("b1").value);
-    //console.log("b=" + b);
-    //console.log("b1="+b1); 
 
     var d = parseInt(document.getElementById("d").value);
-    //console.log("d=" + d); 
+    var c = parseInt(document.getElementById("c").value);
+    if (a > d) {
+        let purelog = ((24 - Math.abs(a - d)) * 60) / c;
 
-    while (b1 <= d) {
-        b1 = b1 + b;
+        document.getElementById("a1").innerHTML = `1. Previous day One Full Bakup = ` + (a > 12 ? a - 12 : a) + (a < 12 ? ` AM` : ` PM`);
+
+        if (b1 > d) {
+            while (b1 >= d) {
+                b1 = b1 - b;
+            }
+        } else {
+            //(b1<d)
+            while (b1 - b < d) {
+                b1 = b1 + b;
+            }
+        }
+        let log1 = (Math.abs(b1 - d) * 60) / c;
+        b1 = b1 > 12 ? b1 - 12 + ` PM` : b1 + ` AM`;
+        document.getElementById("b2").innerHTML = `2. One Diff Backup = ` + b1;
+        d = d > 12 ? d - 12 + " PM" : d + " AM";
+        let text1 = `${log1} .ldf between ${b1} and ${d}`;
+
+        b1 = parseInt(document.getElementById("b1").value);
+        if (b1 - b > a) {
+            while (b1 - b > a) {
+                b1 = b1 - b;
+            }
+        } else {
+            //b1 - b < a
+            while (b1 < a) {
+                b1 = b1 + b;
+            }
+        }
+
+        document.getElementById("c1").innerHTML = `3. Log Backups =  ${log1} (${text1})  log files`;
+
+        a = parseInt(document.getElementById("a").value);
+        d = parseInt(document.getElementById("d").value);
+        a = (a > 12 ? a - 12 : a) + (a < 12 ? ` AM` : ` PM`);
+        d = d > 12 ? d - 12 + ` PM` : d + ` AM`;
+        let text3 = `between Prev's day ${a} & Current day ${d}`;
+        document.getElementById("c2").innerHTML = `OR <br> 1. Full backup at ${a} & Purely Log Backup = ${purelog}(${text3}) `;
+    } else {
+        //(a < d)
+        let purelog = ((12 + Math.abs(a - Math.abs(12 - d))) * 60) / c;
+
+        document.getElementById("a1").innerHTML = `1. Same day One Full Bakup = ` + (a > 12 ? a - 12 : a) + (a < 12 ? ` AM` : ` PM`);
+        if (b1 > d) {
+            while (b1 >= d) {
+                b1 = b1 - b;
+            }
+        } else {
+            //(b1<d)
+            while (b1 + b < d) {
+                b1 = b1 + b;
+            }
+        }
+        let log1 = (Math.abs(b1 - d) * 60) / c;
+        b1 = b1 > 12 ? b1 - 12 + ` PM` : b1 + ` AM`;
+        document.getElementById("b2").innerHTML = `2. One Diff Backup = ` + b1;
+        d = d > 12 ? d - 12 + ` PM` : d + ` AM`;
+        let text1 = `${log1} .ldf between ${b1} and ${d}`;
+
+        b1 = parseInt(document.getElementById("b1").value);
+        if (b1 - b > a) {
+            while (b1 - b > a) {
+                b1 = b1 - b;
+            }
+        }
+
+        document.getElementById("c1").innerHTML = `3. Log Backups =  ${log1} (${text1}) log files`;
+
+        a = parseInt(document.getElementById("a").value);
+        d = parseInt(document.getElementById("d").value);
+        a = (a > 12 ? a - 12 : a) + (a < 12 ? ` AM` : ` PM`);
+        d = d > 12 ? d - 12 + ` PM` : d + ` AM`;
+        let text3 = `between ${a} & ${d}`;
+        document.getElementById("c2").innerHTML = `OR <br> 4. Purely Log Backup = ${purelog}(${text3}) `;
     }
-    //console.log("b1=" + (b1 - b));
+    dailySolutions.classList.toggle('showblock')
+})
+calculateWeekly.addEventListener('click', () => {
+    let weekn = document.querySelector("#wd").value;
 
-    /*document.getElementById("b2").innerHTML = "One Diff Backup - " + ((b1 - b) > 12 ? b1 - b - 12 : b1 - b) + ((b1 - b) < 12 ? ' AM' : ' PM');
-    document.getElementById("b2").innerHTML = "One Diff Backup - " + 
-    ((b1 - b) > 12 ? ((b1 - b - 12)+" PM") : (b1 - b+" AM"));*/
+    let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
+    let numwe = weekday.findIndex((i) => i === weekn) + 1;
+    var wa = parseInt(document.getElementById("wa").value);
+    var wb = parseInt(document.getElementById("wb").value);
+    var i, j = 0, we = parseInt(document.getElementById("we").value);
 
-    //console.log(d - b1 + b);
+    numwe = wb > we ? (numwe = numwe - 1) : numwe;
 
+    let wed = weekday[numwe - 1];
+    document.getElementById("as1").innerHTML = `One Full Backup, Last Sunday = ${wa > 12 ? wa - 12 : wa}  ${wa < 12 ? ` AM` : ` PM`}`;
 
-    var d1 = document.getElementById("d").value;
-    var c1, c = parseInt(document.getElementById("c").value);
-    //console.log(d1.slice(-2)); //49
-    //console.log(49/15); 3.2
-
-    /*if((d - b1 + b) != 0){
-        c1 = ((d - b1 + b) * 60) / 15 + parseInt((d1.slice(-2)) / 15);
-    } 
-    //console.log(c1);
-    document.getElementById("c1").innerHTML = "Log Backups - " + c1 + " log files"; 
-    */
-    if ((b1 - b) > a) {
-        document.getElementById("b2").innerHTML = "One Diff Backup - " +
-            ((b1 - b) > 12 ? ((b1 - b - 12) + " PM") : (b1 - b + " AM"));
-        document.getElementById("c1").innerHTML = "Log Backups - " +
-            ((d - b1 + b) != 0 ? (((d - b1 + b) * 60) / c + parseInt((d1.slice(-2)) / c)) : NaN)
-            + " log files";
-
-        document.getElementById("c2").innerHTML = "OR" + '<br>' + " Full Back with Purely Log Backups - " + ((d - a) * 60 / c + parseInt(d1.slice(-2) / c)) + " log files";
+    document.getElementById("bs2").innerHTML = `One recent Differential Backu = ${wed} ${wb > 12 ? wb - 12 : wb}  ${wb < 12 ? ` AM` : ` PM`}`;
+    if (wb > we) {
+        for (i = 0; i < we; i++) {
+            if (wb < 24) {
+                for (; wb < 24; j++) {
+                    wb += 1;
+                }
+            }
+        }
+    } else {
+        for (i = 0; wb < we; i++) wb += 1;
     }
-    else {
-        document.getElementById("c1").innerHTML = "Log Backups - " +
-            ((d - a) != 0 ? (((d - a) * 60) / c) : NaN) + " log files";
-    }
+    var wc = parseInt(document.getElementById("wc").value);
+    we1 = document.getElementById("we").value;
+
+    document.getElementById("cs1").innerHTML = `Log Backups ${((i + j) * 60) / wc + parseInt(we1.slice(-2) / wc)} log files`;
+    WeeklySolutions.classList.toggle('showblock')
+})
+
+const dropdownbox = document.querySelector('.dropdownbox')
+const containerWeekdays = document.querySelector('.container-weekdays')
+const weekdays = document.querySelectorAll('.weekdays')
+
+dropdownbox.addEventListener('click', () => {
+    containerWeekdays.classList.toggle('showvisibility')
+})
+window.addEventListener('click', (e) => {
+    if (!e.target.matches('.dropdownbox') && containerWeekdays.classList.contains('showvisibility'))
+        containerWeekdays.classList.remove('showvisibility')
+})
+
+weekdays.forEach((weekday) => {
+    weekday.addEventListener('click', () => {
+        dropdownbox.value = weekday.innerHTML
+    })
+})
 
 
-}
 
